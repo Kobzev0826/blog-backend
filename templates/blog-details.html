@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-  {% extends 'base.html' %}
-  {% load static %}
+{% extends 'base.html' %}
+{% load static %}
 
-  {% block title %}
-    <title> Sensive Blog - {{post.title}} </title>
-  {% endblock %}
+{% block title %}
+<title> Sensive Blog - {{post.title}} </title>
+{% endblock %}
 
-  {% block content %}
+{% block content %}
   <!--================ Hero sm Banner start =================-->
   <section class="mb-30px">
     <div class="container">
@@ -15,7 +15,7 @@
           <h1>Blog details</h1>
           <nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
             </ol>
           </nav>
@@ -24,9 +24,6 @@
     </div>
   </section>
   <!--================ Hero sm Banner end =================-->
-
-
-
 
   <!--================ Start Blog Post Area =================-->
   <section class="blog-post-area section-margin">
@@ -88,33 +85,28 @@
         </div>
 
 
-          <!-- Start Blog Post Siddebar -->
-          <div class="col-lg-4 sidebar-widgets">
-              <div class="widget-wrap">
-                <div class="single-sidebar-widget newsletter-widget">
-                  <h4 class="single-sidebar-widget__title">Newsletter</h4>
-                  <div class="form-group mt-30">
-                    <div class="col-autos">
-                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''"
-                        onblur="this.placeholder = 'Enter email'">
-                    </div>
-                  </div>
-                  <button class="bbtns d-block mt-20 w-100">Subcribe</button>
-                </div>
-
-                <div class="single-sidebar-widget post-category-widget">
-                  <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
+        <!-- Start Blog Post Siddebar -->
+        <div class="col-lg-4 sidebar-widgets">
+          <div class="widget-wrap">
+            <div class="single-sidebar-widget newsletter-widget">
+              <h4 class="single-sidebar-widget__title">Newsletter</h4>
+              <div class="form-group mt-30">
+                <div class="col-autos">
+                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
                 </div>
               </div>
+              <button class="bbtns d-block mt-20 w-100">Subcribe</button>
             </div>
-          <!-- End Blog Post Siddebar -->
+            <div class="single-sidebar-widget post-category-widget">
+              <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
+            </div>
+          </div>
+        </div>
+        <!-- End Blog Post Siddebar -->
       </div>
     </div>
   </section>
   <!--================ End Blog Post Area =================-->
 
-  {% endblock %}
+{% endblock %}
 
-  <script src="{% static 'scripts.js' %}"></script>
-</body>
-</html>
